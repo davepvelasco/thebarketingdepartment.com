@@ -213,11 +213,8 @@
           class="d-flex flex-column flex-sm-row justify-content-between py-5 border-top"
         >
           <p>
-            &copy; 2023-
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
-            The Barketing Department. All rights reserved.
+            &copy; 2023-<span id="copyright-year"></span> The Barketing
+            Department. All rights reserved.
           </p>
         </div>
       </div>
@@ -231,6 +228,7 @@
     ></script>
 
     <script>
+      // Navbar
       document.addEventListener("scroll", () => {
         const navbar = document.querySelector(".navbar");
         const contactButton = document.querySelector("#contact-btn");
@@ -241,6 +239,10 @@
         contactButton.classList.toggle("btn-warning", isScrolled);
         contactButton.classList.toggle("btn-outline-warning", !isScrolled);
       });
+
+      // Copyright year
+      document.getElementById("copyright-year").innerText =
+        new Date().getFullYear();
     </script>
   </body>
 </html>
