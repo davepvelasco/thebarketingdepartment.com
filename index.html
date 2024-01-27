@@ -39,7 +39,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav ms-auto mb-lg-0">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
@@ -53,7 +53,7 @@
           <a
             href="mailto:thebarketingdepartment@gmail.com"
             id="contact-btn"
-            class="btn btn-outline-warning ms-4"
+            class="btn btn-outline-warning ms-lg-4 my-2 my-lg-0"
             role="button"
             >Contact Us</a
           >
@@ -233,15 +233,30 @@
 
     <script>
       // Navbar
-      document.addEventListener("scroll", () => {
-        const navbar = document.querySelector(".navbar");
-        const contactButton = document.querySelector("#contact-btn");
-        const isScrolled = window.scrollY > 0;
+      const navbar = document.querySelector(".navbar");
+      const contactButton = document.querySelector("#contact-btn");
+      const myCollapsible = document.getElementById("navbarTogglerDemo02");
 
-        navbar.classList.toggle("bg-white", isScrolled);
-        navbar.classList.toggle("navbar-dark", !isScrolled);
-        contactButton.classList.toggle("btn-warning", isScrolled);
-        contactButton.classList.toggle("btn-outline-warning", !isScrolled);
+      let isMenuOpen = false; // Track the state of the collapsible menu
+
+      const updateNavbar = () => {
+        const shouldToggle = window.scrollY > 0 || isMenuOpen;
+        navbar.classList.toggle("bg-white", shouldToggle);
+        navbar.classList.toggle("navbar-dark", !shouldToggle);
+        contactButton.classList.toggle("btn-warning", shouldToggle);
+        contactButton.classList.toggle("btn-outline-warning", !shouldToggle);
+      };
+
+      document.addEventListener("scroll", updateNavbar);
+
+      myCollapsible.addEventListener("hidden.bs.collapse", () => {
+        isMenuOpen = false;
+        updateNavbar();
+      });
+
+      myCollapsible.addEventListener("show.bs.collapse", () => {
+        isMenuOpen = true;
+        updateNavbar();
       });
 
       // Copyright year
