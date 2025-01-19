@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
@@ -12,407 +13,281 @@
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/png" sizes="48x48" href="favicon.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <!-- End Favicons -->
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/bootstrap-icons.min.css" />
-  </head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Montserrat:wght@400;500;700;800&display=swap');
 
-  <body>
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img
-            src="/img/logo.avif"
-            alt="Logo"
-            class="d-inline-block align-text-top"
-            width="94"
-            height="48"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-          </ul>
-          <a
-            href="mailto:thebarketingdepartment@gmail.com"
-            id="contact-btn"
-            class="btn btn-outline-warning ms-lg-4 my-2 my-lg-0"
-            role="button"
-            >Contact Us</a
-          >
+        .gradient-text {
+            background: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-background {
+            background: linear-gradient(180deg, #FFEBD200 0%, #FFA02859 100%);
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(10%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slide-fade-left {
+            0% {
+                opacity: 0;
+                transform: translateX(-10%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slide-fade-right {
+            0% {
+                opacity: 0;
+                transform: translateX(10%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fade-up 0.5s ease-out forwards;
+        }
+
+        .animate-slide-fade-left {
+            animation: slide-fade-left 0.5s ease-out forwards;
+        }
+
+        .animate-slide-fade-right {
+            animation: slide-fade-right 0.5s ease-out forwards;
+        }
+
+        [data-animate] {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FFFBF6] text-lg font-['Montserrat']">
+    <div class="flex flex-col min-h-screen">
+        <!-- Header -->
+        <header class="flex items-center justify-between px-16 py-8 bg-[#FFFBF6]">
+            <div>
+                <img src="images/logo.avif" alt="The Barketing Department Logo" class="h-16">
+            </div>
+            <!-- Hamburger Button -->
+            <button id="menu-toggle" class="block lg:hidden text-[#2F1B00]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <!-- Navbar -->
+            <nav id="navbar" class="hidden lg:flex lg:space-x-8 text-[#2F1B00]">
+                <a href="#" class="hover:text-[#FF8E01]">Solution</a>
+                <a href="#" class="hover:text-[#FF8E01]">Pricing</a>
+                <a href="#" class="hover:text-[#FF8E01]">Client Success Stories</a>
+                <a href="#" class="hover:text-[#FF8E01]">Case Study</a>
+                <a href="#" class="hover:text-[#FF8E01]">About</a>
+            </nav>
+            <a href="https://calendly.com/thebarketingdepartment/15"
+                class="hidden 2xl:inline-block px-6 py-3 text-white bg-[#FF8E01] rounded-full shadow hover:bg-[#FF8E01] font-bold">
+                Fetch Your Free Strategy Call!
+            </a>
+        </header>
+
+        <!-- Dropdown Menu -->
+        <div id="dropdown-menu" class="hidden lg:hidden flex flex-col space-y-4 px-16 py-4 bg-[#FFFBF6]">
+            <a href="#" class="hover:text-[#FF8E01]">Solution</a>
+            <a href="#" class="hover:text-[#FF8E01]">Pricing</a>
+            <a href="#" class="hover:text-[#FF8E01]">Client Success Stories</a>
+            <a href="#" class="hover:text-[#FF8E01]">Case Study</a>
+            <a href="#" class="hover:text-[#FF8E01]">About</a>
         </div>
-      </div>
-    </nav>
 
-    <!-- ======= Hero Section ======= -->
-    <div
-      class="container d-flex min-vh-100 align-items-center justify-content-center justify-content-md-start text-white"
-    >
-      <div class="text-center text-md-start">
-        <h1 class="mb-4">
-          <span class="fs-4 mb-0">Your brand's best friend in</span><br />
-          <span class="display-5 fw-bold">Digital Marketing</span>
-        </h1>
-        <p class="lead">
-          Need help marketing your pet business?<br />
-          Talk to one of our experts.
-        </p>
-        <a
-          href="https://calendly.com/thebarketingdepartment/15"
-          class="btn btn-warning btn-lg mt-4"
-          role="button"
-        >
-          Book a Call
-        </a>
-      </div>
-    </div>
-    <div class="vh-100 w-100 position-absolute top-0 z-n1">
-      <div class="position-absolute w-100 h-100 bg-black opacity-75"></div>
-      <video
-        src="img/hero.webm"
-        class="d-flex object-fit-cover h-100 w-100"
-        autoplay
-        muted
-        loop
-      ></video>
-    </div>
-    <!-- End Hero -->
+        <!-- Hero Section -->
+        <section class="flex flex-col-reverse lg:flex-row items-center justify-around flex-grow px-16 2xl:px-0">
+            <!-- Text Section -->
+            <div class="text-center lg:text-left mt-10 lg:mt-0" data-animate="slide-fade-left">
+                <h2 class="leading-none font-bold text-[#fc9e1b] font-['League_Spartan'] text-5xl">
+                    Grow Your Pet Business:<br>
+                    <span class="gradient-text">Instagram</span> <span class="text-[#2F1B00]">Marketing Done
+                        Right</span>
+                </h2>
+                <p class="mt-6 text-[#2F1B00] max-w-xl">
+                    Build your community, boost engagement, and turn followers into customers with pet-focused Instagram
+                    marketing.
+                </p>
+                <a href="https://calendly.com/thebarketingdepartment/15"
+                    class="inline-block mt-8 px-8 py-4 text-white bg-[#FF8E01] hover:bg-[#fc9e1b] rounded-full shadow font-bold">
+                    Fetch Your Free Strategy Call!
+                </a>
+            </div>
 
-    <!-- Services -->
-    <section class="py-5 py-xl-8">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-            <h2 class="mb-4 display-6 fw-bold text-center">Services</h2>
-            <p class="text-secondary mb-5 text-center">
-              Harness the expertise of our team to captivate the pet enthusiast
-              community, maximize your reach, and transform your digital
-              footprint with precision and creativity.
+            <!-- Image Section -->
+            <div class="mt-10 lg:mt-0" data-animate="slide-fade-right">
+                <img src="images/hero.webp" alt="Hero Section Image" class="max-w-full lg:max-w-xl">
+            </div>
+        </section>
+    </div>
+
+    <!-- Trusted By Section -->
+    <section class="bg-[#FFFBF6] py-8 text-center px-16">
+        <div class="flex items-center">
+            <!-- Left Line -->
+            <div class="h-[1px] bg-[#F9CE34] flex-grow"></div>
+
+            <!-- Text -->
+            <h3 class="mx-4 font-light uppercase text-[#2F1B0061]">
+                Trusted by Pet Businesses Across the Industry
+            </h3>
+
+            <!-- Right Line -->
+            <div class="h-[1px] bg-[#F9CE34] flex-grow"></div>
+        </div>
+
+        <!-- Swiper Carousel -->
+        <swiper-container loop="true" autoplay="true" slides-per-view="2" space-between="20" breakpoints='{
+                "640": { "slidesPerView": 3, "spaceBetween": 20 },
+                "1024": { "slidesPerView": 5, "spaceBetween": 40 }
+            }' class="mt-8">
+            <!-- Logos -->
+            <swiper-slide>
+                <img src="images/clients/blue_pets_vet_clinic.avif" alt="Logo 1" class="mx-auto h-32">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="images/clients/little_paws_dog_daycare_boarding.avif" alt="Logo 2" class="mx-auto h-32">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="images/clients/pawcare_vet_clinic.avif" alt="Logo 3" class="mx-auto h-32">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="images/clients/pets_nook.avif" alt="Logo 4" class="mx-auto h-32">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="images/clients/red_leash.avif" alt="Logo 5" class="mx-auto h-32">
+            </swiper-slide>
+        </swiper-container>
+    </section>
+
+    <!-- Paw-some Services Section -->
+    <section class="bg-gradient-to-b from-[#FFEBD200] to-[#FFA02859] p-16 rounded-b-[8rem] lg:rounded-b-[32rem]">
+        <div class="text-center">
+            <!-- Title -->
+            <h2 class="text-6xl font-extrabold font-['League_Spartan']">
+                <span class="italic text-[#FC9E1B]">Paw-some</span> Services
+            </h2>
+            <p class="my-4 uppercase text-2xl">
+                Instagram marketing for pet businesses that gets results
             </p>
-            <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
-          </div>
         </div>
-      </div>
 
-      <div class="container overflow-hidden mb-4">
-        <div class="row row-cols-1 row-cols-lg-3 gy-5">
-          <div class="col">
-            <div class="text-center px-xl-2">
-              <i class="bi bi-1-circle-fill text-warning mb-4 fs-1"></i>
-              <h3 class="m-2 fs-5">Social Media Marketing</h3>
-              <p class="m-0 text-secondary">
-                Engage, delight, and build a loyal community of pet enthusiasts
-                through our targetted social media strategies. We curate content
-                that speaks directly to your audience, creating a vibrant online
-                presence that sets your brand apart.
-              </p>
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-16 mt-24 items-end">
+            <!-- Service Card 1 -->
+            <div class="bg-white rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative xl:h-[80%]"
+                data-animate="fade-up">
+                <img src="images/service-1.png" alt="Icon 1" class="w-40 h-40 -top-16 z-10 absolute">
+                <h3 class="text-3xl font-bold text-[#2F1B00] my-8">
+                    Content Strategy & Creation
+                </h3>
+                <p>
+                    Our team creates thumb-stopping content designed to capture the hearts of pet lovers and turn them
+                    into loyal followers. We’ll design posts, stories, and reels that showcase your brand’s personality,
+                    build trust, and make your feed a destination for pet parents.
+                </p>
             </div>
-          </div>
-          <div class="col">
-            <div class="text-center px-xl-2">
-              <i class="bi bi-2-circle-fill text-warning mb-4 fs-1"></i>
-              <h3 class="m-2 fs-5">Facebook Advertisement Campaigns</h3>
-              <p class="m-0 text-secondary">
-                Amplify your reach and drive results with our expertly crafted
-                Facebook ad campaigns. Whether you're launching a new product,
-                promoting an event, or simply increasing brand visibility, our
-                strategic approach ensures that your message resonates with the
-                right audience at the right time.
-              </p>
+
+            <!-- Service Card 2 -->
+            <div class="bg-white rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative xl:h-[90%]"
+                data-animate="fade-up">
+                <img src="images/service-2.png" alt="Icon 2" class="w-40 h-40 -top-16 z-10 absolute">
+                <h3 class="text-3xl font-bold text-[#2F1B00] my-8">
+                    Community Engagement
+                </h3>
+                <p>
+                    Instagram thrives on interaction. We help you engage with pet owners and followers by responding to
+                    comments, fostering conversations, and using Instagram’s interactive features like polls and Q&As.
+                    <br><br>
+                    The result?<br>A loyal community that actively supports your brand.
+                </p>
             </div>
-          </div>
-          <div class="col">
-            <div class="text-center px-xl-2">
-              <i class="bi bi-3-circle-fill text-warning mb-4 fs-1"></i>
-              <h3 class="m-2 fs-5">Website Design & Development</h3>
-              <p class="m-0 text-secondary">
-                Your website is your digital storefront, and we specialize in
-                making it both visually stunning and highly functional. From
-                sleek e-commerce platforms to informative websites, our design
-                and development team creates an online space that reflects the
-                heart and soul of your pet business.
-              </p>
+
+            <!-- Service Card 3 -->
+            <div class="bg-[#FC9E1B] rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative xl:h-[100%]"
+                data-animate="fade-up">
+                <img src="images/service-3.png" alt="Icon 3" class="w-40 h-40 -top-16 z-10 absolute">
+                <h3 class="text-3xl font-bold my-8">
+                    Instagram Growth Strategy
+                </h3>
+                <p>
+                    We develop strategies that grow your follower count organically and authentically. Using
+                    pet-friendly hashtags, trendspotting, and influencer partnerships, we bring your brand to a wider
+                    audience and increase your reach on Instagram.
+                </p>
+                <a href="#"
+                    class="bg-white text-[#FC9E1B] font-bold py-2 px-4 rounded-full shadow-lg hover:bg-gray-200 mt-8">
+                    Fetch Your Free Strategy Call!
+                </a>
             </div>
-          </div>
         </div>
-      </div>
     </section>
-    <!-- End Services -->
-
-    <!-- Clients -->
-    <section class="bg-light">
-      <div class="container py-5 text-center overflow-hidden">
-        <h2 class="display-6 fw-bold mb-5">Our Clients</h2>
-        <div class="row row-cols-1 row-cols-lg-3 gy-4">
-          <div
-            class="col d-flex flex-column justify-content-between align-items-center"
-          >
-            <img
-              src="img/clients/blue_pets_vet_clinic.avif"
-              alt="Blue Pets Vet Clinic logo"
-              class="img-fluid mb-4"
-              width="224"
-              height="250"
-            />
-            <figure>
-              <blockquote class="blockquote">
-                <p>
-                  Your marketing touch is pure gold! Conversion rates are
-                  soaring, and a few tweaks made a significant impact.
-                </p>
-              </blockquote>
-              <figcaption class="blockquote-footer">
-                Blue Pets Vet Clinic
-              </figcaption>
-            </figure>
-          </div>
-          <div
-            class="col d-flex flex-column justify-content-between align-items-center"
-          >
-            <img
-              src="img/clients/little_paws_dog_daycare_boarding.avif"
-              alt="Little Paws Dog Daycare & Boarding Logo"
-              class="img-fluid mb-4"
-              width="269"
-              height="250"
-            />
-            <figure>
-              <blockquote class="blockquote">
-                <p>
-                  Our recent campaign didn't just boost sales; it created a buzz
-                  that has everyone talking about us.
-                </p>
-              </blockquote>
-              <figcaption class="blockquote-footer">
-                Little Paws Dog Daycare & Boarding
-              </figcaption>
-            </figure>
-          </div>
-          <div
-            class="col d-flex flex-column justify-content-between align-items-center"
-          >
-            <img
-              src="img/clients/pawcare_vet_clinic.avif"
-              alt="Pawcare Vet Clinic Logo"
-              class="img-fluid mb-4"
-              width="303"
-              height="250"
-            />
-            <figure>
-              <blockquote class="blockquote">
-                <p>
-                  Your recent tweaks to our strategy were spot-on! It's like our
-                  brand got a facelift, and now it's attracting attention from
-                  all the right places.
-                </p>
-              </blockquote>
-              <figcaption class="blockquote-footer">
-                Pawcare Vet Clinic
-              </figcaption>
-            </figure>
-          </div>
-          <div
-            class="col d-flex flex-column justify-content-between align-items-center"
-          >
-            <img
-              src="img/clients/pets_nook.avif"
-              alt="Pet's Nook logo"
-              class="img-fluid mb-4"
-              width="291"
-              height="250"
-            />
-            <figure>
-              <blockquote class="blockquote">
-                <p>
-                  I've been getting daily orders and gained a lot more returning
-                  customers!! So happy.
-                </p>
-              </blockquote>
-              <figcaption class="blockquote-footer">Pet's Nook</figcaption>
-            </figure>
-          </div>
-          <div
-            class="col d-flex flex-column justify-content-between align-items-center"
-          >
-            <img
-              src="img/clients/red_leash.avif"
-              alt="Red Leash logo"
-              class="img-fluid mb-4"
-              width="256"
-              height="250"
-            />
-            <figure>
-              <blockquote class="blockquote">
-                <p>
-                  Loved how easily you were able to translate and bring to life
-                  ideas I had in mind.
-                </p>
-              </blockquote>
-              <figcaption class="blockquote-footer">The Red Leash</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Clients -->
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white">
-      <div class="container py-5 overflow-hidden" data-bs-theme="dark">
-        <div class="row gy-5 row-cols-1 row-cols-lg-4 pb-5">
-          <div class="col align-self-center pe-5">
-            <img
-              src="img/logo.avif"
-              class="img-fluid"
-              alt="The Barketing Department logo"
-              width="200"
-              height="102"
-            />
-          </div>
-
-          <div class="col">
-            <h2 class="fs-5">Useful Links</h2>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
-              </li>
-              <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-body-secondary">About</a>
-              </li>
-              <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-body-secondary"
-                  >Services</a
-                >
-              </li>
-              <li class="nav-item mb-2">
-                <a href="#" class="nav-link p-0 text-body-secondary"
-                  >Privacy Policy</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="col">
-            <h2 class="fs-5">Social Media</h2>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2">
-                <a
-                  href="https://www.instagram.com/thebarketingdepartment/"
-                  class="nav-link p-0 text-body-secondary"
-                >
-                  <i class="bi bi-instagram me-2"></i>Instagram</a
-                >
-              </li>
-              <li class="nav-item mb-2">
-                <a
-                  href="https://www.linkedin.com/company/the-barketing-department-socials/"
-                  class="nav-link p-0 text-body-secondary"
-                  ><i class="bi bi-linkedin me-2"></i>LinkedIn</a
-                >
-              </li>
-              <li class="nav-item mb-2">
-                <a
-                  href="https://www.facebook.com/thebarketingdepartment/"
-                  class="nav-link p-0 text-body-secondary"
-                >
-                  <i class="bi bi-facebook me-2"></i>Facebook</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="col">
-            <form>
-              <h2 class="fs-5">Subscribe to our newsletter</h2>
-              <p>Monthly digest of what's new and exciting from us.</p>
-              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                <label for="newsletter1" class="visually-hidden"
-                  >Email address</label
-                >
-                <input
-                  id="newsletter1"
-                  type="text"
-                  class="form-control"
-                  placeholder="Email address"
-                />
-                <button class="btn btn-warning" type="button">Subscribe</button>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div
-          class="d-flex flex-column flex-sm-row justify-content-between pt-5 border-top"
-        >
-          <p class="mb-0">
-            &copy; 2023-<span id="copyright-year"></span> The Barketing
-            Department. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
-    <!-- End Footer -->
-
-    <script src="/js/bootstrap.bundle.min.js"></script>
 
     <script>
-      // Navbar
-      const navbar = document.querySelector(".navbar");
-      const contactButton = document.querySelector("#contact-btn");
-      const myCollapsible = document.getElementById("navbarTogglerDemo02");
+        const menuToggle = document.getElementById('menu-toggle');
+        const dropdownMenu = document.getElementById('dropdown-menu');
 
-      let isMenuOpen = false; // Track the state of the collapsible menu
+        menuToggle.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+        });
 
-      const updateNavbar = () => {
-        const shouldToggle = window.scrollY > 0 || isMenuOpen;
-        navbar.classList.toggle("bg-white", shouldToggle);
-        navbar.classList.toggle("navbar-dark", !shouldToggle);
-        contactButton.classList.toggle("btn-warning", shouldToggle);
-        contactButton.classList.toggle("btn-outline-warning", !shouldToggle);
-      };
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                threshold: 0.5,
+            };
 
-      document.addEventListener("scroll", updateNavbar);
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const animationClass = `animate-${element.dataset.animate}`;
+                        element.classList.add(animationClass);
+                        observer.unobserve(element);
+                    }
+                });
+            }, observerOptions);
 
-      myCollapsible.addEventListener("hidden.bs.collapse", () => {
-        isMenuOpen = false;
-        updateNavbar();
-      });
-
-      myCollapsible.addEventListener("show.bs.collapse", () => {
-        isMenuOpen = true;
-        updateNavbar();
-      });
-
-      // Copyright year
-      document.getElementById("copyright-year").innerText =
-        new Date().getFullYear();
+            document.querySelectorAll('[data-animate]').forEach((el) => {
+                observer.observe(el);
+            });
+        });
     </script>
-  </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</body>
+
 </html>
