@@ -200,7 +200,8 @@
 	</section>
 
 	<!-- Paw-some Services Section -->
-	<section class="bg-gradient-to-b from-[#FFEBD200] to-[#FFA02859] p-16 rounded-b-[8rem] lg:rounded-b-[32rem]">
+	<section
+		class="services-section bg-gradient-to-b from-[#FFEBD200] to-[#FFA02859] p-16 rounded-b-[8rem] lg:rounded-b-[32rem] data-stagger">
 		<div class="text-center">
 			<!-- Title -->
 			<h2 class="text-6xl font-extrabold font-['League_Spartan']">
@@ -212,9 +213,10 @@
 		</div>
 
 		<!-- Services Grid -->
+		<!-- Services Grid -->
 		<div class="grid grid-cols-1 xl:grid-cols-3 gap-16 mt-24 items-end">
 			<!-- Service Card 1 -->
-			<div class="bg-white rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative xl:h-[80%] services-card"
+			<div class="bg-white rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative min-h-[80%] services-card"
 				data-animate="fade-up">
 				<img src="images/service-1.png" alt="Icon 1" class="w-40 h-40 -top-16 z-10 absolute">
 				<h3 class="text-3xl font-bold text-[#2F1B00] my-8">
@@ -228,7 +230,7 @@
 			</div>
 
 			<!-- Service Card 2 -->
-			<div class="bg-white rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative xl:h-[90%] services-card"
+			<div class="bg-white rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative min-h-[90%] services-card"
 				data-animate="fade-up">
 				<img src="images/service-2.png" alt="Icon 2" class="w-40 h-40 -top-16 z-10 absolute">
 				<h3 class="text-3xl font-bold text-[#2F1B00] my-8">
@@ -243,7 +245,7 @@
 			</div>
 
 			<!-- Service Card 3 -->
-			<div class="bg-[#FC9E1B] rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative xl:h-[100%] services-card"
+			<div class="bg-[#FC9E1B] rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative h-full services-card"
 				data-animate="fade-up">
 				<img src="images/service-3.png" alt="Icon 3" class="w-40 h-40 -top-16 z-10 absolute">
 				<h3 class="text-3xl font-bold my-8">
@@ -260,6 +262,7 @@
 				</a>
 			</div>
 		</div>
+
 	</section>
 
 	<!-- Client Reviews Section -->
@@ -355,30 +358,42 @@
 				threshold: 0.3,
 			};
 
-			const observer = new IntersectionObserver((entries) => {
+			// Observer for the services section
+			const servicesObserver = new IntersectionObserver((entries, observer) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						const element = entry.target;
-
-						// Check if the element is a service card for staggered delay
-						if (element.classList.contains('services-card')) {
-							const index = Array.from(element.parentNode.children).indexOf(element);
-							const animationClass = `animate-${element.dataset.animate}`;
-							element.style.animationDelay = `${index * 0.2}s`; // Stagger effect
-							element.classList.add(animationClass);
-						} else {
-							// Non-service-card elements
-							const animationClass = `animate-${element.dataset.animate}`;
-							element.classList.add(animationClass); // No delay, play immediately
-						}
-
-						observer.unobserve(element);
+						const serviceCards = entry.target.querySelectorAll('.services-card');
+						serviceCards.forEach((card, index) => {
+							const animationClass = `animate-${card.dataset.animate}`;
+							card.style.animationDelay = `${index * 0.2}s`; // Stagger delay
+							card.classList.add(animationClass);
+						});
+						observer.unobserve(entry.target); // Stop observing after triggering
 					}
 				});
 			}, observerOptions);
 
-			document.querySelectorAll('[data-animate]').forEach((el) => {
-				observer.observe(el);
+			// Observe the services section
+			const servicesSection = document.querySelector('.services-section');
+			if (servicesSection) {
+				servicesObserver.observe(servicesSection);
+			}
+
+			// Generic observer for all other data-animate elements
+			const genericObserver = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						const element = entry.target;
+						const animationClass = `animate-${element.dataset.animate}`;
+						element.classList.add(animationClass); // Play animation immediately
+						genericObserver.unobserve(element);
+					}
+				});
+			}, observerOptions);
+
+			// Observe all other elements with data-animate
+			document.querySelectorAll('[data-animate]:not(.services-card)').forEach((el) => {
+				genericObserver.observe(el);
 			});
 		});
 	</script>
