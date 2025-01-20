@@ -18,7 +18,6 @@
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
 	<meta name="msapplication-TileColor" content="#da532c" />
 	<meta name="theme-color" content="#ffffff" />
-	<!-- End Favicons -->
 
 	<script src="https://cdn.tailwindcss.com"></script>
 	<style>
@@ -85,6 +84,15 @@
 
 		[data-animate] {
 			opacity: 0;
+		}
+
+		:root {
+			--swiper-pagination-color: #ffa422;
+			--swiper-pagination-bullet-width: 10px;
+			--swiper-pagination-bullet-height: 10px;
+			--swiper-pagination-bullet-inactive-color: #FFC36D;
+			--swiper-pagination-bullet-inactive-opacity: 1;
+			--swiper-pagination-bullet-opacity: 1;
 		}
 	</style>
 </head>
@@ -255,15 +263,81 @@
 	</section>
 
 	<!-- Client Reviews Section -->
-	<section class="mt-32">
+	<section class="bg-[#FFFBF6] py-16">
 		<div class="text-center">
 			<!-- Title -->
-			<h2 class="text-6xl font-extrabold font-['League_Spartan']">
+			<h2 class="text-6xl font-extrabold font-['League_Spartan'] mb-4">
 				<span class="italic text-[#FC9E1B]">Happy Tails</span> from Satisfied Clients
 			</h2>
-			<p class="my-4 uppercase text-2xl">
+			<p class="uppercase text-2xl text-[#2F1B00] font-medium">
 				Real Success Stories from Pet Industry Owners
 			</p>
+		</div>
+
+		<!-- Reviews Carousel -->
+		<div class="mt-16 px-8 md:px-16 lg:px-32">
+			<swiper-container class="w-full" loop="true" autoplay="true" slides-per-view="1" space-between="20"
+				pagination="true" pagination-dynamic-bullets="true" breakpoints='{
+					"640": { "slidesPerView": 2, "spaceBetween": 20 },
+					"1024": { "slidesPerView": 3, "spaceBetween": 40 }
+				  }'>
+				<!-- Review Slide 1 -->
+				<swiper-slide class="flex flex-col items-center text-center pb-16">
+					<img src="images/clients/blue_pets_vet_clinic.avif" alt="Blue Pets Vet Clinic Logo"
+						class="h-24 mb-6">
+					<h3 class="text-xl font-bold text-[#AA6200]">Blue Pets Vet</h3>
+					<div class="text-[#FC9E1B] text-2xl">★★★★★</div>
+					<p class="mt-4">Your marketing touch is pure gold! <strong>Conversion rates are soaring</strong>,
+						and a few
+						tweaks made a significant impact.</p>
+				</swiper-slide>
+
+				<!-- Review Slide 2 -->
+				<swiper-slide class="flex flex-col items-center text-center pb-16">
+					<img src="images/clients/little_paws_dog_daycare_boarding.avif"
+						alt="Little Paws Dog Daycare & Boarding Logo" class="h-24 mb-6">
+					<h3 class="text-xl font-bold text-[#AA6200]">Little Paws Dog Daycare & Boarding</h3>
+					<div class="text-[#FC9E1B] text-2xl">★★★★★</div>
+					<p class="mt-4"><strong>Our recent campaign didn't just boost sales</strong>; it created a buzz that
+						has everyone
+						talking about us.</p>
+				</swiper-slide>
+
+				<!-- Review Slide 3 -->
+				<swiper-slide class="flex flex-col items-center text-center pb-16">
+					<img src="images/clients/pawcare_vet_clinic.avif" alt="Pawcare Vet Clinic Logo" class="h-24 mb-6">
+					<h3 class="text-xl font-bold text-[#AA6200]">Pawcare Vet Clinic</h3>
+					<div class="text-[#FC9E1B] text-2xl">★★★★★</div>
+					<p class="mt-4">
+						Your recent tweaks to our <span class="font-bold">strategy were spot-on!</span> It's like our
+						brand got a facelift,
+						and <span class="font-bold">now it's attracting attention</span> from all the right places.
+					</p>
+				</swiper-slide>
+
+				<!-- Review Slide 4 -->
+				<swiper-slide class="flex flex-col items-center text-center pb-16">
+					<img src="images/clients/pets_nook.avif" alt="Pet's Nook Logo" class="h-24 mb-6">
+					<h3 class="text-xl font-bold text-[#AA6200]">Pet's Nook</h3>
+					<div class="text-[#FC9E1B] text-2xl">★★★★★</div>
+					<p class="mt-4">
+						I've been <span class="font-bold">getting daily orders</span> and <span class="font-bold">gained
+							a lot more returning customers!</span> So happy.
+					</p>
+				</swiper-slide>
+
+				<!-- Review Slide 5 -->
+				<swiper-slide class="flex flex-col items-center text-center pb-16">
+					<img src="images/clients/red_leash.avif" alt="The Red Leash Logo" class="h-24 mb-6">
+					<h3 class="text-xl font-bold text-[#AA6200]">The Red Leash</h3>
+					<div class="text-[#FC9E1B] text-2xl">★★★★★</div>
+					<p class="mt-4">
+						Loved how <span class="font-bold">easily</span> you were able to <span
+							class="font-bold">translate and bring to life ideas</span> I had in mind.
+					</p>
+				</swiper-slide>
+				<swiper-pagination></swiper-pagination>
+			</swiper-container>
 		</div>
 	</section>
 
