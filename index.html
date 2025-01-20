@@ -97,22 +97,22 @@
 	</style>
 </head>
 
-<body class="bg-[#FFFBF6] text-lg font-['Montserrat']">
-	<div class="flex flex-col min-h-screen">
+<body class="bg-[#FFFBF6] font-['Montserrat'] text-[#2F1B00]">
+	<div class="container flex flex-col lg:min-h-screen mx-auto">
 		<!-- Header -->
-		<header class="flex items-center justify-between px-16 py-8 bg-[#FFFBF6]">
+		<header class="flex items-center justify-between p-4">
 			<div>
 				<img src="images/logo.avif" alt="The Barketing Department Logo" class="h-16">
 			</div>
 			<!-- Hamburger Button -->
-			<button id="menu-toggle" class="block lg:hidden text-[#2F1B00]">
+			<button id="menu-toggle" class="block lg:hidden">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
 					stroke="currentColor" class="w-6 h-6">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
 				</svg>
 			</button>
 			<!-- Navbar -->
-			<nav id="navbar" class="hidden lg:flex lg:space-x-8 text-[#2F1B00]">
+			<nav id="navbar" class="hidden lg:flex lg:space-x-8">
 				<a href="#" class="hover:text-[#FF8E01]">Solution</a>
 				<a href="#" class="hover:text-[#FF8E01]">Pricing</a>
 				<a href="#" class="hover:text-[#FF8E01]">Client Success Stories</a>
@@ -120,13 +120,13 @@
 				<a href="#" class="hover:text-[#FF8E01]">About</a>
 			</nav>
 			<a href="https://calendly.com/thebarketingdepartment/15"
-				class="hidden 2xl:inline-block px-6 py-3 text-white bg-[#FF8E01] rounded-full shadow hover:bg-[#FF8E01] font-bold">
+				class="bg-[#FF8E01] font-bold hidden p-4 rounded-full shadow text-white xl:inline-block">
 				Fetch Your Free Strategy Call!
 			</a>
 		</header>
 
 		<!-- Dropdown Menu -->
-		<div id="dropdown-menu" class="hidden lg:hidden flex flex-col space-y-4 px-16 py-4 bg-[#FFFBF6]">
+		<div id="dropdown-menu" class="hidden lg:hidden flex flex-col space-y-4 px-16 bg-[#FFFBF6]">
 			<a href="#" class="hover:text-[#FF8E01]">Solution</a>
 			<a href="#" class="hover:text-[#FF8E01]">Pricing</a>
 			<a href="#" class="hover:text-[#FF8E01]">Client Success Stories</a>
@@ -135,33 +135,32 @@
 		</div>
 
 		<!-- Hero Section -->
-		<section class="flex flex-col-reverse lg:flex-row items-center justify-around flex-grow px-16 2xl:px-0">
+		<section class="flex flex-col flex-grow items-center lg:flex-row-reverse lg:justify-around p-4 lg:p-0">
+			<!-- Image Section -->
+			<div class="max-w-lg" data-animate="slide-fade-right">
+				<img src="images/hero.webp" alt="Hero Section Image" class="w-full">
+			</div>
+
 			<!-- Text Section -->
-			<div class="text-center lg:text-left mt-10 lg:mt-0" data-animate="slide-fade-left">
-				<h2 class="leading-none font-bold text-[#fc9e1b] font-['League_Spartan'] text-5xl">
-					Grow Your Pet Business:<br>
-					<span class="gradient-text">Instagram</span> <span class="text-[#2F1B00]">Marketing Done
-						Right</span>
+			<div class="flex flex-col gap-5 mt-8" data-animate="slide-fade-left">
+				<h2 class="leading-none font-bold font-['League_Spartan'] text-3xl xl:text-5xl">
+					<span class="text-[#fc9e1b]">Grow Your Pet Business:</span><br>
+					<span class="gradient-text">Instagram</span> Marketing Done Right</span>
 				</h2>
-				<p class="mt-6 text-[#2F1B00] max-w-xl">
+				<p class="max-w-xl">
 					Build your community, boost engagement, and turn followers into customers with pet-focused Instagram
 					marketing.
 				</p>
 				<a href="https://calendly.com/thebarketingdepartment/15"
-					class="inline-block mt-8 px-8 py-4 text-white bg-[#FF8E01] hover:bg-[#fc9e1b] rounded-full shadow font-bold">
+					class="bg-[#FF8E01] font-bold p-4 rounded-full shadow text-center text-white md:self-start">
 					Fetch Your Free Strategy Call!
 				</a>
-			</div>
-
-			<!-- Image Section -->
-			<div class="mt-10 lg:mt-0" data-animate="slide-fade-right">
-				<img src="images/hero.webp" alt="Hero Section Image" class="max-w-full lg:max-w-xl">
 			</div>
 		</section>
 	</div>
 
 	<!-- Trusted By Section -->
-	<section class="bg-[#FFFBF6] py-8 text-center px-16">
+	<section class="container bg-[#FFFBF6] mt-8 lg:mt-0 mx-auto">
 		<div class="flex items-center">
 			<!-- Left Line -->
 			<div class="h-[1px] bg-[#F9CE34] flex-grow"></div>
@@ -176,10 +175,9 @@
 		</div>
 
 		<!-- Swiper Carousel -->
-		<swiper-container loop="true" autoplay="true" slides-per-view="2" space-between="20" breakpoints='{
-                "640": { "slidesPerView": 3, "spaceBetween": 20 },
-                "1024": { "slidesPerView": 5, "spaceBetween": 40 }
-            }' class="mt-8">
+		<swiper-container loop="true" autoplay="true" slides-per-view="2" space-between="20"
+			breakpoints='{"640": { "slidesPerView": 3, "spaceBetween": 20 }, "1024": { "slidesPerView": 5, "spaceBetween": 40 }}'
+			class="mt-8">
 			<!-- Logos -->
 			<swiper-slide>
 				<img src="images/clients/blue_pets_vet_clinic.avif" alt="Logo 1" class="mx-auto h-32">
@@ -200,79 +198,80 @@
 	</section>
 
 	<!-- Paw-some Services Section -->
-	<section
-		class="services-section bg-gradient-to-b from-[#FFEBD200] to-[#FFA02859] p-16 rounded-b-[8rem] lg:rounded-b-[32rem] data-stagger">
-		<div class="text-center">
-			<!-- Title -->
-			<h2 class="text-6xl font-extrabold font-['League_Spartan']">
-				<span class="italic text-[#FC9E1B]">Paw-some</span> Services
-			</h2>
-			<p class="my-4 uppercase text-2xl">
-				Instagram marketing for pet businesses that gets results
-			</p>
-		</div>
-
-		<!-- Services Grid -->
-		<!-- Services Grid -->
-		<div class="grid grid-cols-1 xl:grid-cols-3 gap-16 mt-24 items-end">
-			<!-- Service Card 1 -->
-			<div class="bg-white rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative min-h-[80%] services-card"
-				data-animate="fade-up">
-				<img src="images/service-1.png" alt="Icon 1" class="w-40 h-40 -top-16 z-10 absolute">
-				<h3 class="text-3xl font-bold text-[#2F1B00] my-8">
-					Content Strategy & Creation
-				</h3>
-				<p>
-					Our team creates thumb-stopping content designed to capture the hearts of pet lovers and turn them
-					into loyal followers. We’ll design posts, stories, and reels that showcase your brand’s personality,
-					build trust, and make your feed a destination for pet parents.
+	<div class="bg-gradient-to-b from-[#FFEBD200] to-[#FFA02859] rounded-b-[8rem] pb-16">
+		<section class="container flex flex-col justify-center gap-8 lg:min-h-screen mx-auto services-section">
+			<div class="text-center">
+				<!-- Title -->
+				<h2 class="text-4xl xl:text-5xl font-extrabold font-['League_Spartan'] mb-4">
+					<span class="italic text-[#FC9E1B]">Paw-some</span> Services
+				</h2>
+				<p class="uppercase text-xl">
+					Instagram marketing for pet businesses that gets results
 				</p>
 			</div>
 
-			<!-- Service Card 2 -->
-			<div class="bg-white rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative min-h-[90%] services-card"
-				data-animate="fade-up">
-				<img src="images/service-2.png" alt="Icon 2" class="w-40 h-40 -top-16 z-10 absolute">
-				<h3 class="text-3xl font-bold text-[#2F1B00] my-8">
-					Community Engagement
-				</h3>
-				<p>
-					Instagram thrives on interaction. We help you engage with pet owners and followers by responding to
-					comments, fostering conversations, and using Instagram’s interactive features like polls and Q&As.
-					<br><br>
-					The result?<br>A loyal community that actively supports your brand.
-				</p>
-			</div>
+			<!-- Services Grid -->
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-end lg:h-[480px]">
+				<!-- Service Card 1 -->
+				<div class="bg-white rounded-3xl shadow-lg flex flex-col items-center text-center relative min-h-min h-[80%] p-8 services-card"
+					data-animate="fade-up">
+					<img src="images/service-1.png" alt="Icon 1" class="w-40 h-40 -to z-10 absolute -top-8">
+					<h3 class="text-3xl font-bold mt-16 mb-8">
+						Content Strategy & Creation
+					</h3>
+					<p>
+						Our team creates thumb-stopping content designed to capture the hearts of pet lovers and turn
+						them into loyal followers. We’ll design posts, stories, and reels that showcase your brand’s
+						personality, build trust, and make your feed a destination for pet parents.
+					</p>
+				</div>
 
-			<!-- Service Card 3 -->
-			<div class="bg-[#FC9E1B] rounded-3xl shadow-lg p-16 flex flex-col items-center text-center relative h-full services-card"
-				data-animate="fade-up">
-				<img src="images/service-3.png" alt="Icon 3" class="w-40 h-40 -top-16 z-10 absolute">
-				<h3 class="text-3xl font-bold my-8">
-					Instagram Growth Strategy
-				</h3>
-				<p>
-					We develop strategies that grow your follower count organically and authentically. Using
-					pet-friendly hashtags, trendspotting, and influencer partnerships, we bring your brand to a wider
-					audience and increase your reach on Instagram.
-				</p>
-				<a href="#"
-					class="bg-white text-[#FC9E1B] font-bold py-2 px-4 rounded-full shadow-lg hover:bg-gray-200 mt-8">
-					Fetch Your Free Strategy Call!
-				</a>
-			</div>
-		</div>
+				<!-- Service Card 2 -->
+				<div class="bg-white rounded-3xl shadow-lg flex flex-col items-center text-center relative min-h-min h-[90%] p-8 services-card"
+					data-animate="fade-up">
+					<img src="images/service-2.png" alt="Icon 2" class="w-40 h-40 -to z-10 absolute -top-8">
+					<h3 class="text-3xl font-bold mt-16 mb-8"> <!-- Adjusted margin for icon space -->
+						Community Engagement
+					</h3>
+					<p>
+						Instagram thrives on interaction. We help you engage with pet owners and followers by responding
+						to comments, fostering conversations, and using Instagram’s interactive features like polls and
+						Q&As.<br><br>
+						The result?<br>A loyal community that actively supports your brand.
+					</p>
+				</div>
 
-	</section>
+				<!-- Service Card 3 -->
+				<div class="bg-[#FC9E1B] rounded-3xl shadow-lg flex flex-col items-center text-center relative min-h-min h-full p-8 services-card"
+					data-animate="fade-up">
+					<img src="images/service-3.png" alt="Icon 3" class="w-40 h-40 -to z-10 absolute -top-8">
+					<h3 class="text-3xl font-bold mt-16 mb-8"> <!-- Adjusted margin for icon space -->
+						Instagram Growth Strategy
+					</h3>
+					<p>
+						We develop strategies that grow your follower count organically and authentically. Using
+						pet-friendly hashtags, trendspotting, and influencer partnerships, we bring your brand to a
+						wider
+						audience and increase your reach on Instagram.
+					</p>
+					<a href="#"
+						class="bg-white text-[#FC9E1B] font-bold px-4 py-2 rounded-full shadow-lg hover:bg-gray-200 mt-8">
+						Fetch Your Free Strategy Call!
+					</a>
+				</div>
+			</div>
+		</section>
+	</div>
+
 
 	<!-- Client Reviews Section -->
-	<section class="bg-[#FFFBF6] py-16">
+	<section class="container flex flex-col justify-center gap-8 lg:min-h-screen mx-auto mt-8 lg:mt-0">
 		<div class="text-center">
 			<!-- Title -->
-			<h2 class="text-6xl font-extrabold font-['League_Spartan'] mb-4">
+			<h2 class="text-4xl xl:text-5xl font-extrabold font-['League_Spartan'] mb-4">
 				<span class="italic text-[#FC9E1B]">Happy Tails</span> from Satisfied Clients
 			</h2>
-			<p class="uppercase text-2xl text-[#2F1B00] font-medium">
+			<p class="uppercase text-xl mt-4">
 				Real Success Stories from Pet Industry Owners
 			</p>
 		</div>
@@ -283,7 +282,7 @@
 				pagination="true" pagination-dynamic-bullets="true" breakpoints='{
 					"640": { "slidesPerView": 2, "spaceBetween": 20 },
 					"1024": { "slidesPerView": 3, "spaceBetween": 40 }
-				  }'>
+				 }'>
 				<!-- Review Slide 1 -->
 				<swiper-slide class="flex flex-col items-center text-center pb-16">
 					<img src="images/clients/blue_pets_vet_clinic.avif" alt="Blue Pets Vet Clinic Logo"
