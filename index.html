@@ -25,7 +25,7 @@
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
-		href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Montserrat:wght@400;500;700;800&display=swap"
+		href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap"
 		rel="stylesheet" />
 
 	<style>
@@ -271,7 +271,7 @@
 	</div>
 
 	<!-- Client Reviews Section -->
-	<section class="container flex flex-col justify-center gap-8 lg:min-h-screen mx-auto mt-16 lg:mt-0">
+	<section class="container flex flex-col justify-center gap-12 lg:min-h-screen mx-auto mt-16 lg:mt-0">
 		<div class="text-center">
 			<!-- Title -->
 			<h2 class="text-4xl xl:text-5xl font-extrabold font-['League_Spartan'] mb-4">
@@ -351,7 +351,7 @@
 
 	<!-- Case Study -->
 	<section
-		class="container flex flex-col gap-8 lg:min-h-screen mx-auto mt-8 lg:mt-0 rounded-[2.5rem] bg-[#FFE5C3] p-3 lg:p-6">
+		class="container flex flex-col gap-12 lg:min-h-screen mx-auto mt-8 lg:mt-0 rounded-[2.5rem] bg-[#FFE5C3] p-3 lg:p-6">
 		<div class="bg-no-repeat bg-scroll bg-[#FFFBF6] rounded-[1.5rem] h-full flex flex-col flex-grow p-8"
 			style="background-image: linear-gradient(#FFFBF6E6, #FFFBF6E6), url('/images/logo.avif'); background-size: 50rem auto; background-position: 80% 80%; background-attachment: fixed;">
 			<!-- Header Section -->
@@ -381,7 +381,7 @@
 						stories, and effective hashtag strategies, we took their profile from average to a must-follow
 						destination for pet parents.
 					</p>
-					<div class="conversion-statistics grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-8 text-center">
+					<div class="conversion-statistics grid md:grid-cols-2 gap-12 max-w-4xl mx-auto mt-8 text-center">
 						<div>
 							<p class="text-[#FC9E1B] text-6xl font-extrabold">+<span data-stat="158">0</span>%</p>
 							<p class="text-xl font-medium">
@@ -400,8 +400,68 @@
 		</div>
 	</section>
 
+	<!-- About Us Section -->
+	<section class="flex flex-col justify-center gap-12 lg:min-h-screen mt-8 lg:mt-0">
 
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.2/countUp.min.js'></script>
+		<div class="text-center">
+			<!-- Title -->
+			<h2 class="text-4xl xl:text-5xl font-extrabold font-['League_Spartan'] mb-4">
+				<span class="italic text-[#FC9E1B]">About</span> Us
+			</h2>
+			<p class="uppercase text-xl mt-4">
+				The Pack Behind the Instagram Magic
+			</p>
+		</div>
+
+		<div class="container flex max-w-6xl mx-auto bg-[#FC9E1B] rounded-3xl p-8">
+			<!-- Left Side -->
+			<div class="hidden xl:flex flex-row basis-1/3 relative -translate-x-1/4 translate-y-16">
+				<!-- Image -->
+				<div class="bg-white rounded-3xl p-3">
+					<img src="images/TBD-Image-2.jpg" class="w-full h-full object-cover rounded-2xl">
+				</div>
+
+				<!-- Stats -->
+				<div class="flex flex-col items-center space-y-4 absolute right-0 translate-x-1/2 -translate-y-8">
+					<div class="bg-white rounded-full px-8 py-4 text-center w-full shadow-lg">
+						<h4 class="font-['League_Spartan'] text-7xl font-extrabold">5</h4>
+						<span class="text-sm uppercase">Years Experience</span>
+					</div>
+					<div class="bg-white rounded-full px-8 py-4 text-center w-full shadow-lg">
+						<h4 class="font-['League_Spartan'] text-7xl font-extrabold">50</h4>
+						<span class="text-sm uppercase">Clients Served</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Right Side -->
+			<div class="lg:p-12 xl:basis-2/3 flex flex-col justify-between">
+				<p class="text-lg font-medium text-white">
+					At The Barketing Department, we understand that pet businesses aren’t just businesses—they’re a
+					passion, a community, and a way to bring joy to pet parents everywhere. That’s why we’ve focused our
+					expertise on one platform that brings it all together: Instagram.<br><br>
+					Our mission is simple: to help pet businesses grow their audience, engagement, and impact through
+					creative, data-driven strategies tailored to your brand. Whether you’re a groomer, trainer, pet
+					store, or veterinarian, we’ve got the tools to make your business the top dog on Instagram.
+				</p>
+				<div class="flex flex-col md:flex-row gap-3 mt-8 xl:mt-0 text-center">
+					<a href="https://calendly.com/thebarketingdepartment/15"
+						class="bg-white font-bold p-4 rounded-full shadow">
+						Fetch Your Free Strategy Call!
+					</a>
+					<a href="https://calendly.com/thebarketingdepartment/15"
+						class="outline outline-1 font-bold p-4 rounded-full shadow">
+						More About Us
+					</a>
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+
+
+
 	<script>
 		const menuToggle = document.getElementById('menu-toggle');
 		const dropdownMenu = document.getElementById('dropdown-menu');
