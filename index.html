@@ -380,22 +380,16 @@
 						stories, and effective hashtag strategies, we took their profile from average to a must-follow
 						destination for pet parents.
 					</p>
-					<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-8 text-center">
-						<!-- Conversion Statistic -->
+					<div class="conversion-statistics grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-8 text-center">
 						<div>
-							<p class="text-[#FC9E1B] text-6xl font-extrabold">
-								+158%
-							</p>
+							<p class="text-[#FC9E1B] text-6xl font-extrabold" data-stat="158">0</p>
 							<p class="text-xl font-medium">
 								Conversion<br>New Clients
 							</p>
 						</div>
-						<!-- Followers Statistic -->
 						<div>
-							<p class="text-[#FC9E1B] text-6xl font-extrabold">
-								500
-							</p>
-							<p class="text-xl md:mt-3 font-medium">
+							<p class="text-[#FC9E1B] text-6xl font-extrabold" data-stat="500">0</p>
+							<p class="text-xl font-medium">
 								Followers
 							</p>
 						</div>
@@ -406,6 +400,7 @@
 	</section>
 
 
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.2/countUp.min.js'></script>
 	<script>
 		const menuToggle = document.getElementById('menu-toggle');
 		const dropdownMenu = document.getElementById('dropdown-menu');
@@ -417,49 +412,55 @@
 		document.addEventListener('DOMContentLoaded', () => {
 			const observerOptions = {
 				root: null,
-				threshold: 0.3,
+				threshold: 0.3, // Trigger when 30% of the element is visible
 			};
 
-			// Observer for the services section
-			const servicesObserver = new IntersectionObserver((entries, observer) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						const serviceCards = entry.target.querySelectorAll('.services-card');
-						serviceCards.forEach((card, index) => {
-							const animationClass = `animate-${card.dataset.animate}`;
-							card.style.animationDelay = `${index * 0.2}s`; // Stagger delay
-							card.classList.add(animationClass);
-						});
-						observer.unobserve(entry.target); // Stop observing after triggering
-					}
-				});
-			}, observerOptions);
-
-			// Observe the services section
-			const servicesSection = document.querySelector('.services-section');
-			if (servicesSection) {
-				servicesObserver.observe(servicesSection);
-			}
-
-			// Generic observer for all other data-animate elements
-			const genericObserver = new IntersectionObserver((entries) => {
+			const observer = new IntersectionObserver((entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						const element = entry.target;
-						const animationClass = `animate-${element.dataset.animate}`;
-						element.classList.add(animationClass); // Play animation immediately
-						genericObserver.unobserve(element);
+
+						// Handle animations
+						if (element.dataset.animate) {
+							element.classList.add(`animate-${element.dataset.animate}`);
+							if (element.classList.contains('services-card')) {
+								const parent = element.closest('.services-section');
+								if (parent) {
+									parent.querySelectorAll('.services-card').forEach((card, index) => {
+										card.style.animationDelay = `${index * 0.2}s`; // Stagger animation delay
+									});
+								}
+							}
+						}
+
+						// Initialize custom counter for elements with `data-stat`
+						if (element.dataset.stat) {
+							const targetNumber = parseInt(element.getAttribute('data-stat'), 10);
+							const duration = 700; // Animation duration in milliseconds
+							const frameRate = 60; // Frames per second
+							const totalFrames = Math.ceil((duration / 1000) * frameRate);
+							const increment = targetNumber / totalFrames;
+
+							let current = 0;
+							const interval = setInterval(() => {
+								current += increment;
+								if (current >= targetNumber) {
+									current = targetNumber;
+									clearInterval(interval);
+								}
+								element.textContent = Math.floor(current).toLocaleString();
+							}, 1000 / frameRate); // Update based on frame rate
+						}
+
+						observer.unobserve(element); // Stop observing after the animation
 					}
 				});
 			}, observerOptions);
 
-			// Observe all other elements with data-animate
-			document.querySelectorAll('[data-animate]:not(.services-card)').forEach((el) => {
-				genericObserver.observe(el);
-			});
+			// Observe elements with animation or counter data attributes
+			document.querySelectorAll('[data-animate], [data-stat]').forEach((el) => observer.observe(el));
 		});
 	</script>
-
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
 
