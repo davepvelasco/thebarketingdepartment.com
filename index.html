@@ -76,6 +76,23 @@
 			}
 		}
 
+		@keyframes fade-about-image {
+			from {
+				opacity: 0;
+				transform: translateY(25%) translateX(-20%);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(15%) translateX(-20%);
+			}
+		}
+
+		
+		.animate-about-image {
+			animation: fade-about-image 0.5s ease-out forwards;
+		}
+
 		.animate-fade-up {
 			animation: fade-up 0.5s ease-out forwards;
 		}
@@ -401,7 +418,7 @@
 	</section>
 
 	<!-- About Us Section -->
-	<section class="flex flex-col justify-center gap-12 lg:min-h-screen mt-8 lg:mt-0">
+	<section class="container mx-auto flex flex-col justify-center gap-12 lg:min-h-screen mt-8 lg:mt-0">
 
 		<div class="text-center">
 			<!-- Title -->
@@ -413,9 +430,9 @@
 			</p>
 		</div>
 
-		<div class="container flex max-w-6xl mx-auto bg-[#FC9E1B] rounded-3xl p-8">
+		<div class="flex max-w-6xl mx-auto bg-[#FC9E1B] rounded-3xl p-8">
 			<!-- Left Side -->
-			<div class="hidden xl:flex flex-row basis-1/3 relative -translate-x-1/4 translate-y-16">
+			<div class="hidden xl:flex flex-row basis-1/3" data-animate="about-image">
 				<!-- Image -->
 				<div class="bg-white rounded-3xl p-3">
 					<img src="images/TBD-Image-2.jpg" class="w-full h-full object-cover rounded-2xl">
@@ -435,7 +452,7 @@
 			</div>
 
 			<!-- Right Side -->
-			<div class="lg:p-12 xl:basis-2/3 flex flex-col justify-between">
+			<div class="lg:p-12 xl:basis-2/3 flex flex-col justify-between" data-animate="slide-fade-right">
 				<p class="text-lg font-medium text-white">
 					At The Barketing Department, we understand that pet businesses aren’t just businesses—they’re a
 					passion, a community, and a way to bring joy to pet parents everywhere. That’s why we’ve focused our
