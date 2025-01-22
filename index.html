@@ -88,6 +88,22 @@
 			}
 		}
 
+		@keyframes fade-cta-image {
+			0% {
+				opacity: 0;
+				transform: translateX(10%) translateY(-15%);
+			}
+
+			100% {
+				opacity: 1;
+				transform: translateX(-25%) translateY(-15%);
+			}
+		}
+
+		.animate-cta-image {
+			animation: fade-cta-image 0.5s ease-out forwards;
+		}
+
 
 		.animate-about-image {
 			animation: fade-about-image 0.5s ease-out forwards;
@@ -452,7 +468,7 @@
 			</div>
 
 			<!-- Right Side -->
-			<div class="lg:p-12 xl:basis-2/3 flex flex-col justify-between" data-animate="slide-fade-right">
+			<div class="lg:p-12 xl:basis-2/3 flex flex-col justify-between relative" data-animate="slide-fade-right">
 				<p class="text-lg font-medium text-white">
 					At The Barketing Department, we understand that pet businesses aren’t just businesses—they’re a
 					passion, a community, and a way to bring joy to pet parents everywhere. That’s why we’ve focused our
@@ -478,7 +494,8 @@
 	</section>
 
 	<!-- Pricing Section -->
-	<section class="container flex flex-col justify-center items-center gap-8 lg:min-h-screen mx-auto mt-16 lg:mt-0 p-4 lg:p-0">
+	<section
+		class="container flex flex-col justify-center items-center gap-8 lg:min-h-screen mx-auto mt-16 lg:mt-0 p-4 lg:p-0">
 		<div class=" text-center">
 			<!-- Title -->
 			<h2 class="text-4xl xl:text-5xl font-extrabold font-['League_Spartan'] mb-4">
@@ -503,7 +520,8 @@
 				</div>
 
 				<!-- bottom -->
-				<div class="flex flex-col justify-between flex-grow items-start bg-white p-8 rounded-xl -translate-y-8 md:translate-x-8">
+				<div
+					class="flex flex-col justify-between flex-grow items-start bg-white p-8 rounded-xl -translate-y-8 md:translate-x-8">
 					<!-- Icon List -->
 					<div class="mb-6">
 						<ul class="space-y-2 font-medium text-lg">
@@ -562,7 +580,8 @@
 				</div>
 
 				<!-- bottom -->
-				<div class="flex flex-col justify-between flex-grow items-start bg-white p-8 rounded-xl -translate-y-8 md:translate-x-8">
+				<div
+					class="flex flex-col justify-between flex-grow items-start bg-white p-8 rounded-xl -translate-y-8 md:translate-x-8">
 					<!-- Icon List -->
 					<div class="mb-6">
 						<ul class="space-y-2 font-medium text-lg">
@@ -633,7 +652,8 @@
 				</div>
 
 				<!-- bottom -->
-				<div class="flex flex-col flex-grow justify-between items-start bg-white p-8 rounded-xl -translate-y-8 md:translate-x-8">
+				<div
+					class="flex flex-col flex-grow justify-between items-start bg-white p-8 rounded-xl -translate-y-8 md:translate-x-8">
 					<!-- Icon List -->
 					<div class="mb-6">
 						<ul class="space-y-2 font-medium text-lg">
@@ -697,6 +717,25 @@
 		</a>
 	</section>
 
+	<!-- CTA -->
+	<section class="bg-[#FF8C0B] container mx-auto rounded-3xl p-12 text-lg mt-8">
+		<div class="hidden xl:block max-w-md absolute" data-animate="cta-image">
+			<img src="images/hero.webp" alt="Hero Section Image" class="w-full transform scale-x-[-1]">
+		</div>
+		<div class="flex flex-col max-w-5xl text-white ml-auto" data-animate="slide-fade-left">
+			<p class="text-[#2F1B00] font-medium text-2xl mb-2">Ready to make your pet business an Instagram favorite?</p>
+			<h2 class="font-['League_Spartan'] text-6xl font-extrabold mb-3">
+				Get Best <span class="text-[#2F1B00]">Instagram Strategist</span> In Your Side Pocket
+			</h2>
+			<span class="mb-8">Build a loyal community, increase engagement, and turn followers into customers with pet-focused
+				Instagram strategies.</span>
+			<a href="https://calendly.com/thebarketingdepartment/15" 
+			   class="bg-white font-bold p-4 rounded-full shadow text-[#2F1B00] self-start">
+				Fetch Your Free Strategy Call!
+			</a>
+		</div>
+	</section>
+
 	<script>
 		const menuToggle = document.getElementById('menu-toggle');
 		const dropdownMenu = document.getElementById('dropdown-menu');
@@ -708,7 +747,7 @@
 		document.addEventListener('DOMContentLoaded', () => {
 			const observerOptions = {
 				root: null,
-				threshold: 0.3, // Trigger when 30% of the element is visible
+				threshold: 0.50
 			};
 
 			const observer = new IntersectionObserver((entries) => {
