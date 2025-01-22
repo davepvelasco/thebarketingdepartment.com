@@ -19,6 +19,11 @@
 	<meta name="msapplication-TileColor" content="#da532c" />
 	<meta name="theme-color" content="#ffffff" />
 
+	<!-- Font Awesome -->
+	<link href="/fonts/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+	<link href="/fonts/font-awesome/css/brands.min.css" rel="stylesheet" />
+	<link href="/fonts/font-awesome/css/solid.min.css" rel="stylesheet" />
+
 	<!-- Tailwind -->
 	<script src="https://cdn.tailwindcss.com"></script>
 
@@ -718,23 +723,73 @@
 	</section>
 
 	<!-- CTA -->
-	<section class="bg-[#FF8C0B] container mx-auto rounded-3xl p-12 text-lg mt-8">
+	<section class="bg-[#FF8C0B] container mx-auto rounded-3xl p-12 text-lg mb-12">
 		<div class="hidden xl:block max-w-md absolute" data-animate="cta-image">
 			<img src="images/hero.webp" alt="Hero Section Image" class="w-full transform scale-x-[-1]">
 		</div>
 		<div class="flex flex-col max-w-5xl text-white ml-auto" data-animate="slide-fade-left">
-			<p class="text-[#2F1B00] font-medium text-2xl mb-2">Ready to make your pet business an Instagram favorite?</p>
+			<p class="text-[#2F1B00] font-medium text-2xl mb-2">Ready to make your pet business an Instagram favorite?
+			</p>
 			<h2 class="font-['League_Spartan'] text-6xl font-extrabold mb-3">
 				Get Best <span class="text-[#2F1B00]">Instagram Strategist</span> In Your Side Pocket
 			</h2>
-			<span class="mb-8">Build a loyal community, increase engagement, and turn followers into customers with pet-focused
+			<span class="mb-8">Build a loyal community, increase engagement, and turn followers into customers with
+				pet-focused
 				Instagram strategies.</span>
-			<a href="https://calendly.com/thebarketingdepartment/15" 
-			   class="bg-white font-bold p-4 rounded-full shadow text-[#2F1B00] self-start">
+			<a href="https://calendly.com/thebarketingdepartment/15"
+				class="bg-white font-bold p-4 rounded-full shadow text-[#2F1B00] self-start">
 				Fetch Your Free Strategy Call!
 			</a>
 		</div>
 	</section>
+
+	<footer class="container grid grid-cols-1 lg:grid-cols-3 gap-12 mx-auto mb-12 text-lg px-4 lg:px-0">
+		<!-- Left Section -->
+		<div class="flex flex-col items-start">
+			<img src="images/logo.avif" alt="The Barketing Department Logo" class="mb-4 w-48 h-auto">
+			<p>
+				Build a loyal community, increase engagement, and turn followers into customers with pet-focused
+				Instagram strategies.
+			</p>
+		</div>
+
+		<!-- Middle Section -->
+		<div>
+			<h3 class="mb-4 font-semibold">Quick Links</h3>
+			<ul class="space-y-2">
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Solution</a></li>
+				<li><a href="#">Pricing</a></li>
+				<li><a href="#">Client Success Stories</a></li>
+				<li><a href="#">Case Study</a></li>
+			</ul>
+		</div>
+
+		<!-- Right Section -->
+		<div>
+			<h3 class="mb-4 font-semibold">Get In Touch!</h3>
+			<p class="flex items-center space-x-2">
+				<span>&#9742;</span>
+				<span>+63 917 314 6980</span>
+			</p>
+			<p class="flex items-center space-x-2 mt-2">
+				<span>&#9993;</span>
+				<span>hello@thebarketingdepartment.com</span>
+			</p>
+			<h4 class="mt-6 font-semibold">Connect with us!</h4>
+			<div class="flex items-center space-x-4 mt-4">
+				<a href="#" class="bg-orange-200 text-white w-12 h-12 flex items-center justify-center rounded-full hover:bg-orange-300">
+				  <i class="fab fa-facebook-f text-lg"></i>
+				</a>
+				<a href="#" class="bg-orange-200 text-white w-12 h-12 flex items-center justify-center rounded-full hover:bg-orange-300">
+				  <i class="fab fa-twitter text-lg"></i>
+				</a>
+				<a href="#" class="bg-orange-200 text-white w-12 h-12 flex items-center justify-center rounded-full hover:bg-orange-300">
+				  <i class="fab fa-youtube text-lg"></i>
+				</a>
+			  </div>
+		</div>
+	</footer>
 
 	<script>
 		const menuToggle = document.getElementById('menu-toggle');
